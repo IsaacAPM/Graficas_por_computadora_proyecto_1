@@ -133,7 +133,7 @@ int main(){
     
     IndexBuffer ib_ss(ss_indices, 6);
     
-    float t = 80.0f;
+    float t = 100.0f;
     int phi = 9;
 
     std::cout << x_spiral(t, 30) << ", " << y_spiral(t, 30)  << std::endl;
@@ -180,7 +180,7 @@ int main(){
 	space_shader.SetUniform1f("u_time", time);
 	renderer.Draw(va_star, ib_star, space_shader);
 
-	if(t<40){
+	if(t<50){
 	    vortex_trans = vortex_trans + 0.001;
 	    vortex_shader.Bind();
 	    vortex_shader.SetUniform1f("u_time", time);
