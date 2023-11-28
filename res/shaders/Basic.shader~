@@ -1,0 +1,25 @@
+#shader vertex
+#version 330 core
+
+layout(location = 0) in vec4 position;
+
+void main()
+{
+    gl_Position = position;
+};
+
+#shader fragment
+#version 330 core
+
+layout(location = 0) out vec4 color;
+
+in vec4 gl_FragCoord;
+
+uniform vec2 u_resolution;
+
+void main()
+{
+    vec2 uv = gl_FragCoord.xy / u_resolution;
+    color = vec4(uv.x, 1.0, 1.0, 1.0);
+};
+

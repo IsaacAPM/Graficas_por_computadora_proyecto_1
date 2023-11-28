@@ -1,0 +1,28 @@
+cmake_minimum_required(VERSION 3.22.1)
+project("my_opengl_project")
+cmake_policy(SET CMP0072 NEW)
+
+set(ENV{PATH} PATH)
+
+find_package(OpenGL REQUIRED)
+
+add_subdirectory(libs)
+add_subdirectory(libs/glm)
+
+add_executable(my_opengl_project src/main.cpp)
+
+target_link_libraries(my_opengl_project
+	glfw
+	OpenGL::GL
+	glad
+	glm::glm
+	IndexBuffer
+	VertexBuffer
+	VertexArray
+	VertexBufferLayout
+	Shader
+	Renderer
+	stb_image
+)
+
+target_include_directories(my_opengl_project PUBLIC glm)
